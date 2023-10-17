@@ -1,4 +1,3 @@
-
 import View from './views.js';
 import icons from 'url:../../img/icons.svg';
 import previewView from './previewView.js';
@@ -8,15 +7,16 @@ class BookmarkViews extends View {
   _errorMessage = `No bookmark yet. Find a nice recipe and bookmark it :)`;
   _message = '';
 
-   addHandlerRender(handler){
-    window.addEventListener('load', handler)
-   }
+  addHandlerRender(handler) {
+    window.addEventListener('load', handler);
+  }
 
   _generateMarkup() {
-    console.log(this._data)
-    return this._data.map(bookmark=>previewView.render(bookmark,false)).join('');
+    console.log(this._data);
+    return this._data
+      .map(bookmark => previewView.render(bookmark, false))
+      .join('');
   }
- 
 }
 
 export default new BookmarkViews();
